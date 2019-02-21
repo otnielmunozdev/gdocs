@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers; //carga las clases , donde esta ubicado elk nuevo archivo 
 
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class HomeController extends Controller //es clase que se extiende a el controlador 
 {
     /**
      * Create a new controller instance.
@@ -13,7 +13,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth'); //protege las rutas para todo el controlador necesitas estar logeado
+        //$this->middleware('auth'); //protege las rutas para todo el controlador necesitas estar logeado
     }
 
     /**
