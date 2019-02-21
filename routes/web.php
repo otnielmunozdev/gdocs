@@ -37,3 +37,8 @@ Route::get('/bienvenida/{nombre}/{apellido?}', function($nombre, $apellido= null
 
 });
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home'); //recibe la ruta home y llama al controlador HomeController / @index ejecuta el metodo index
+
