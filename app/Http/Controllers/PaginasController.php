@@ -15,6 +15,11 @@ class PaginasController extends Controller
         return view('paginas/contacto');
     }
 
+    public function equipo()
+    {
+        return view('paginas.equipo');
+    }
+
     public function bienvenida($nombre,$apellido=null)
     {
         //function($nombre, $apellido= null){ // '/bienvdida/{nombre de la variable que guradara informacion}' , el ?variable es para puede resivir el parametro o no 

@@ -18,6 +18,7 @@ Route::get('/', function () {
 Route::get('/contacto', 'PaginasController@contacto');
 
 Route::get('/info', 'PaginasController@info');
+Route::get('/equipo', 'PaginasController@equipo');
 
 Route::get('/bienvenida/{nombre}/{apellido?}', 'PaginasController@bienvenida');
 
@@ -25,4 +26,5 @@ Route::get('/bienvenida/{nombre}/{apellido?}', 'PaginasController@bienvenida');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home'); //recibe la ruta home y llama al controlador HomeController / @index ejecuta el metodo index
+
 

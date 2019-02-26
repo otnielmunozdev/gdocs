@@ -10,14 +10,15 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}" defer></script> 
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="/css/app.css" rel="stylesheet"> <!--link boopstrap-->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">  {{-- mueve directo a public comentado hace una referencia del directorio public y formula la URL completa al archivo --}}
 </head>
 <body>
     <div id="app">
@@ -33,7 +34,17 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        <li>
+                            <a href="/info" class="nav-link">Informaci&oacute;n</a>
+                            
+                        </li>
+                        <li>
+                            <a href="/contacto" class="nav-link">Contacto</a>
+                            
+                        </li>
+                        <li>
+                            <a href="/equipo" class="nav-link">Equipo</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
