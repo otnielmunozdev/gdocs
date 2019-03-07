@@ -35,7 +35,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li>
-                            <a href="/info" class="nav-link">Informaci&oacute;n</a>
+                            <a href="{{ action('PaginasController@info') }}" class="nav-link">Informaci&oacute;n</a>{{-- apunta al controlador metodo --}}
                             
                         </li>
                         <li>
@@ -43,7 +43,7 @@
                             
                         </li>
                         <li>
-                            <a href="/equipo" class="nav-link">Equipo</a>
+                            <a href="{{ route('equipo')}}" class="nav-link">Equipo</a>
                         </li>
                     </ul>
 
