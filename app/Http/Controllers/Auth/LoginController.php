@@ -25,7 +25,14 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/home'; //cuando se hace el lkogin se redicciona a home
+
+    protected  function redirectTo()
+    {
+        session(['apodo' => 'Sam']);
+        session(['apodo' =>\Auth::user()->name]);
+        return '/documentos';
+    }
 
     /**
      * Create a new controller instance.
