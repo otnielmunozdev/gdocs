@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/inicio', function () {
+    return view('inicio');
+});
+
 Route::get('/documentos', 'DocumentoController@index')->name('documentos.index');
 
 Route::get('/contacto', 'PaginasController@contacto');
@@ -23,6 +27,7 @@ Route::get('/acerca-de', 'PaginasController@info');
 Route::get('/team', 'PaginasController@equipo')->name('equipo');
 
 Route::get('/bienvenida/{nombre}/{apellido?}', 'PaginasController@bienvenida');
+
 
 
 Auth::routes();
