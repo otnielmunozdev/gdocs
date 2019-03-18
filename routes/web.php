@@ -19,6 +19,16 @@ Route::get('/inicio', function () {
     return view('inicio');
 });
 
+Route::resource('/dependencias','DependenciaController'); //sustituye lo de abajo por crearlo con el comando
+
+/*Route::get('/dependencia', 'DependenciasController@index'); // primero se muestra con get , se rllena el formulario y con post se manda
+Route::get('/dependencia/create', 'DependenciasController@create');
+Route::post('/dependencia/create', 'DependenciasController@store');
+Route::get('/dependencia/{id}', 'DependenciasController@show');
+Route::get('/dependencia/edit', 'DependenciasController@edit');
+Route::post('/dependencia/edit', 'DependenciasController@update');
+Route::post('/dependencia/delete', 'DependenciasController@delete');*/
+
 Route::get('/documentos', 'DocumentoController@index')->name('documentos.index');
 
 Route::get('/contacto', 'PaginasController@contacto');
