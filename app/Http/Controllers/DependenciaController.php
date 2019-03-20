@@ -43,7 +43,7 @@ class DependenciaController extends Controller
        $dep->clave = $request->clave; //es lo mismo
        $dep->estatus = $request->estatus;
        $dep->save();
-       return redirect()->route('dependencias.index'); //redirige a la ruta en el route list no de la vista
+       return redirect()->route('dependencias.index'); //redirige a la ruta en el route list no de la vista 
     }
 
     /**
@@ -52,9 +52,13 @@ class DependenciaController extends Controller
      * @param  \App\Dependencia  $dependencia
      * @return \Illuminate\Http\Response
      */
+
+     //Dependencia $dependencia
     public function show(Dependencia $dependencia)
     {
-        //
+        //ver detalles 
+        //$dependencia = Dependencia::find($id); //busca la tabla deacuerdo al id es el equivalente a los parametros de ahorita
+        return view('dependencias.dependenciaShow',compact('dependencia'));
     }
 
     /**
@@ -65,7 +69,7 @@ class DependenciaController extends Controller
      */
     public function edit(Dependencia $dependencia)
     {
-        //
+        return view('dependencias.dependenciaForm', compact('dependencia'));
     }
 
     /**
@@ -77,7 +81,11 @@ class DependenciaController extends Controller
      */
     public function update(Request $request, Dependencia $dependencia)
     {
-        //
+       $dependencia->dependencia = $request->input('dependencia');//trae la informacion del formualrio del campo llamado dependencia
+       $dependencia->clave = $request->clave; //es lo mismo
+       $dependencia->estatus = $request->estatus;
+       $dependencia->save();
+       return redirect()->route('dependencias.show',$dependencia->id); //redirige a la ruta en el route list no de la vista 
     }
 
     /**
@@ -88,6 +96,7 @@ class DependenciaController extends Controller
      */
     public function destroy(Dependencia $dependencia)
     {
-        //
+        $dependencia->delete();//->onDelete('cascade');
+        return redirect()->route('dependencias.index');
     }
 }

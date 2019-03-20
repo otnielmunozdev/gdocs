@@ -12,7 +12,7 @@
     <h3 class="card-title">Listado de dependencias</h3>
 </div>
     <div class="row">
-        <div class="col-md-8 offset-md-2">
+        <div class="col-md-10 offset-md-1">
             <div class="card-body">
                 <table class="table">
                     <thead>
@@ -20,6 +20,7 @@
                         <th>Dependencia</th>
                         <th>Clave</th>
                         <th>Status</th>
+                        <th>Acciones</th>
                     </thead>
                     <tbody>
                         @foreach ($dependencias as $depen)
@@ -28,6 +29,9 @@
                                 <td>{{$depen->dependencia}}</td>
                                 <td>{{$depen->clave}}</td>
                                 <td>{{$depen->estatus}}</td>
+                                <td>
+                                <a href="{{route('dependencias.show',$depen->id)}}" class="btn btn-info btn-sm">Detalle</a>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>
