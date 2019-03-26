@@ -38,6 +38,11 @@ class DependenciaController extends Controller
     {
         //dd('Entra a metodo storage');
        // dd($request->all());
+       $request->validate([
+           'dependencia' => 'required|max:255',
+           'clave' => 'required|min:3|max:10',
+       ]);
+
        $dep = new Dependencia();
        $dep->dependencia = $request->input('dependencia');//trae la informacion del formualrio del campo llamado dependencia
        $dep->clave = $request->clave; //es lo mismo
@@ -69,7 +74,7 @@ class DependenciaController extends Controller
      */
     public function edit(Dependencia $dependencia)
     {
-        return view('dependencias.dependenciaForm', compact('dependencia'));
+        return view('dependencias.dependenciaForm', compact('dependencia')); 
     }
 
     /**

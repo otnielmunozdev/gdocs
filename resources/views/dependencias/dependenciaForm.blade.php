@@ -13,6 +13,15 @@
     <h3 class="card-title">Capturar dependencias</h3>
 </div>
   <div class="card-body">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
 
 
         <div class="col-md-8 offset-md-2 col-sm-12 ">
@@ -27,12 +36,23 @@
             @csrf {{--valida que el formulario eeste dentro de la app , crea un token , si se quita la sesion expira--}}
                 <div class="form-group">
                     <label class="form-label">Dependencia</label>
-                <input type="text" class="form-control"  placeholder="Nombre de la dependencia" value="{{$dependencia->dependencia ?? ''}}" name="dependencia" required>{{-- variable ?? '' evalua si esta setiado lo juetra si es nulo o no existe ?? --}}
-                  </div>
-                  <div class="form-group">
-                        <label class="form-label">Clave</label>
-                  <input type="text" class="form-control"  placeholder="Clave" value="{{isset($dependencia) ? $dependencia->clave : ''}}"name="clave" required>
-                      </div>
+                    <input type="text" class="form-control"  placeholder="Nombre de la dependencia" value="{{$dependencia->dependencia ?? ''}} {{ old('dependencia') }}" name="dependencia" >{{-- variable ?? '' evalua si esta setiado lo juetra si es nulo o no existe ?? --}}
+                    @if ($errors->has('dependencia'))
+                        <span class="alert alert-danger" role="alert">
+                            <strong>{{ $errors->first('dependencia') }}</strong> 
+                        </span>
+                    @endif
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Clave</label>
+                    <input type="text" class="form-control"  placeholder="Clave" value="{{isset($dependencia) ? $dependencia->clave : ''}} {{ old('clave') }}"name="clave" >{{--old('') regresa o mantiene lo que ya habia escrito--}}
+                    @if ($errors->has('clave'))
+                        <span class="alert alert-danger" role="alert">
+                            <strong>{{ $errors->first('clave') }}</strong> 
+                        </span>
+                   @endif
+                
+                </div>
                       <div class="form-group">
                             <label class="form-label">estatus</label>
                             <select name="estatus" class="form-control">
