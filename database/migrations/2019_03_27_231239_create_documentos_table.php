@@ -16,11 +16,12 @@ class CreateDocumentosTable extends Migration
         Schema::create('documentos', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('user_id');
-            $table->string('dirigido');
-            $table->dateTime('fecha_recibido');
             $table->string('envia');
             $table->string('no_oficio');
             $table->date('fecha_oficio');
+            $table->string('recibido');
+
+
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');

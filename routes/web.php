@@ -29,7 +29,7 @@ Route::get('/dependencia/edit', 'DependenciasController@edit');
 Route::post('/dependencia/edit', 'DependenciasController@update');
 Route::post('/dependencia/delete', 'DependenciasController@delete');*/
 
-Route::get('/documentos', 'DocumentoController@index')->name('documentos.index');
+Route::resource('/documentos', 'DocumentoController');
 
 Route::get('/contacto', 'PaginasController@contacto');
 
