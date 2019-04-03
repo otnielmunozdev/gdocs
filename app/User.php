@@ -39,6 +39,6 @@ class User extends Authenticatable
 
     public function Documentos()
     {
-        return $this->hasMany('Documento');//mi usuario tiene muchos documentos ('Nombre_Modelo')
+        return $this->hasMany('App\Documento');//mi usuario tiene muchos documentos ('Nombre_Modelo')
     }
 }

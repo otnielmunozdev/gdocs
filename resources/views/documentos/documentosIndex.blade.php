@@ -15,6 +15,7 @@
                     <th>Fecha Recibido</th>
 
                     <th>Usuario Recibe</th>
+                    <th>Funcionario </th>
                 </tr>
             </thead>
             <tbody>
@@ -28,6 +29,16 @@
                     <td>{{ $doc->fecha_oficio }}</td>
                     <td>{{ $doc->recibido }}</td>
                 <td>{{$doc->user->nombre}} ({{$doc->user->email}})</td>
+                <td>
+                    <ul>
+                        @foreach ($doc->funcionarios as $funcionario)
+                            <li>{{$funcionario->nombre}} </li>
+                        @endforeach
+                    </ul>
+                </td>
+                <td>
+                <a href="{{route('documentos.edit',$doc->id)}}" class="btn btn-sm btn-danger" >Editar</a>
+                </td>
                 </tr>
                @endforeach
             </tbody>
