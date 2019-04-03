@@ -30,6 +30,7 @@
                     <td>{{ $doc->recibido }}</td>
                 <td>{{$doc->user->nombre}} ({{$doc->user->email}})</td>
                 <td>
+                    
                     <ul>
                         @foreach ($doc->funcionarios as $funcionario)
                             <li>{{$funcionario->nombre}} </li>
